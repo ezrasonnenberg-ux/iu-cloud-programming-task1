@@ -29,3 +29,29 @@ This project provides Infrastructure as Code (IaC) using **Terraform** to deploy
 3. [AWS CLI](https://aws.amazon.com/cli/) configured with your AWS credentials:
    ```bash
    aws configure
+
+Step-by-Step Execution
+
+Step 1: Initialize Terraform
+Initialize the working directory and download the AWS provider plugin:
+Bash - terraform init
+
+Step 2: Review the Execution Plan
+Generate and inspect the execution plan to preview what resources will be created:
+Bash - terraform plan
+
+Step 3: Deploy Infrastructure
+Apply the configuration to provision the AWS cloud architecture:
+Bash - terraform apply
+
+(Type yes when prompted to confirm deployment).
+Step 4: Access the Webpage
+Once the deployment finishes, Terraform will output the endpoints:
+
+    Open the alb_dns_name in your web browser.
+    Or open the cloudfront_domain_name for low-latency cached access.
+
+Step 5: Clean Up / Destroy Resources
+To ensure zero ongoing resource usage and prevent charges:
+Bash- terraform destroy
+(Type yes when prompted to confirm destruction).
