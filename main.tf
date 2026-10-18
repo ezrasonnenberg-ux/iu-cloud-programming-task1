@@ -14,7 +14,7 @@ terraform {
 
 # Configure the AWS Provider (Frankfurt region)
 provider "aws" {
-  region = "eu-central-1"
+  region = "eu-north-1"
 }
 
 # Fetch available Availability Zones in this region
@@ -170,7 +170,7 @@ data "aws_ami" "amazon_linux" {
 resource "aws_launch_template" "web" {
   name_prefix   = "iu-web-template-"
   image_id      = data.aws_ami.amazon_linux.id
-  instance_type = "t2.micro" # AWS Free Tier eligible
+  instance_type = "t3.micro" # AWS Free Tier eligible
 
   network_interfaces {
     associate_public_ip_address = true
